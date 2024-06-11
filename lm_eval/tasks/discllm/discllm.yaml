@@ -6,7 +6,13 @@ dataset_kwargs:
     validation: disc_data/test/data-00000-of-00001.arrow
 training_split: train
 validation_split: validation
-doc_to_text: !function pre_process.doc_to_text
+doc_to_text: !function pre_process_disc.doc_to_text
 doc_to_target: "{{output}}"
 metric_list:
-  - metric: acc
+  - metric: perplexity
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+generation_kwargs:
+  do_sample: false
+  temperature: 0.0
