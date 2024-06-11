@@ -1,0 +1,12 @@
+task: discllm
+dataset_path: arrow
+dataset_kwargs:
+  data_files:
+    train: disc_data/train/data-00000-of-00001.arrow
+    validation: disc_data/test/data-00000-of-00001.arrow
+training_split: train
+validation_split: validation
+doc_to_text: !function pre_process.doc_to_text
+doc_to_target: "{{output}}"
+metric_list:
+  - metric: acc
