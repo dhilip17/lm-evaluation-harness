@@ -15,4 +15,4 @@ generation_kwargs:
   until:
     - "<|im_end|>"
   do_sample: false
-  temperature: 0.0
+  temperature: 7.0
